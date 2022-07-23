@@ -1,6 +1,9 @@
 let btn = document.querySelector("#nova-frase");
 let frase = document.querySelector(".frase");
 let pessoa = document.querySelector(".pessoa");
+let imagens = document.querySelectorAll(".img");
+
+let opacity = "1";
 
 const BANCO_FRASES = [
   {
@@ -62,11 +65,33 @@ const BANCO_FRASES = [
   },
 ];
 
-btn.addEventListener("click", rand);
+const BANCO_IMG = [
+  "/img/pexels-paul-theodor-oja-4122202.jpg ",
+  "/img/pexels-adrien-olichon-2387793.jpg ",
+  "/img/pexels-sohail-nachiti-807598.jpg",
+  "/img/pexels-ian-turnell-709552.jpg ",
+  "/img/pexels-hristo-fidanov-1252869.jpg ",
+  "/img/pexels-eberhard-grossgasteiger-1366835.jpg ",
+  "/img/pexels-eberhard-grossgasteiger-443446.jpg ",
+  "/img/pexels-david-besh-884788.jpg",
+];
+btn.addEventListener("click", change);
 
-function rand() {
-  let random = Math.floor(Math.random() * BANCO_FRASES.length);
-
-  frase.innerText = BANCO_FRASES[random].frase;
-  pessoa.innerText = BANCO_FRASES[random].pessoa;
+function change() {
+  let randomImg = Math.floor(Math.random() * BANCO_IMG.length);
+  let randomImg1 = Math.floor(Math.random() * BANCO_IMG.length);
+  let randomText = Math.floor(Math.random() * BANCO_FRASES.length);
+  if (opacity == "1") {
+    opacity = "0";
+    frase.innerText = BANCO_FRASES[randomText].frase;
+    pessoa.innerText = BANCO_FRASES[randomText].pessoa;
+    imagens[0].src = BANCO_IMG[randomImg];
+    imagens[1].style.opacity = opacity;
+  } else {
+    opacity = "1";
+    frase.innerText = BANCO_FRASES[randomText].frase;
+    pessoa.innerText = BANCO_FRASES[randomText].pessoa;
+    imagens[1].src = BANCO_IMG[randomImg1];
+    imagens[1].style.opacity = opacity;
+  }
 }

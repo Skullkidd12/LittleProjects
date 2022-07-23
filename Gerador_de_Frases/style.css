@@ -11,16 +11,21 @@ body {
   align-items: center;
   height: 100vh;
   text-align: center;
-  background: url(/LittleProjects/img/pexels-paul-theodor-oja-4122202.jpg);
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: cover;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  size-adjust: cover;
+  z-index: -1;
+  transition: opacity 2.5s ease-in-out;
 }
 
 .container {
   width: 600px;
-  height: 450px;
+  height: 700px;
 }
 
 header {
