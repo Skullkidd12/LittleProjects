@@ -1,12 +1,7 @@
-const slideshowImages = document.querySelectorAll(".slideshow-img");
-const button = document.querySelector("button");
-let currentImageCounter = 0;
+function randomNum() {
+  let randomText = Math.floor(Math.random() * 15);
 
-button.addEventListener("click", nextImage);
-slideshowImages[currentImageCounter].style.opacity = 1;
-
-function nextImage() {
-  slideshowImages[currentImageCounter].style.opacity = 0;
-  currentImageCounter = (currentImageCounter + 1) % slideshowImages.length;
-  slideshowImages[currentImageCounter].style.opacity = 1;
+  console.log(randomText);
 }
+
+setInterval(randomNum, 1000);
