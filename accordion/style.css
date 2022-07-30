@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: url(/accordion/img/pexels-hristo-fidanov-1252869.jpg);
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  background-position-y: 0;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion {
+  width: 65%;
+  background-color: aliceblue;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.accordion .accordion-title {
+  margin-bottom: 30px;
+}
+
+.accordion .content-container .questao {
+  padding: 18px 0px;
+  cursor: pointer;
+  font-size: 22px;
+  border-bottom: 2px solid black;
+  position: relative;
+}
+
+.accordion .content-container .questao::after {
+  content: "+";
+  position: absolute;
+  right: -5px;
+}
+
+.accordion .content-container .resposta {
+  padding-top: 15px;
+  font-size: 18px;
+  line-height: 1.5;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/*active é uma classe adicionada pelo JS*/
+
+.accordion .content-container.active .resposta {
+  height: 150px;
+}
+
+.accordion .content-container.active .questao {
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.accordion .content-container.active .questao::after {
+  content: "-";
+  font-size: 30px;
+  transition: 0.5s;
+}

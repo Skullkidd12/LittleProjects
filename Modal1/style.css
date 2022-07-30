@@ -6,14 +6,26 @@
 }
 
 body {
-  background: url(/Modal1/img/pexels-eberhard-grossgasteiger-443446.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   position: relative;
 }
+.imgDiv {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
 
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: contain;
+  filter: none;
+  z-index: -1;
+  transition: all 1s;
+}
 .open-btn {
   position: absolute;
   top: 70%;
@@ -50,9 +62,8 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 1.5rem;
-
   animation-name: animatemodal;
-  animation-duration: 0.4s;
+  animation-duration: 0.7s;
 }
 
 .close-btn {
@@ -65,22 +76,29 @@ body {
 }
 
 .modal-container {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: #00000075;
+
   transition: 0.4s;
 }
 
 @keyframes animatemodal {
   from {
-    top: 70px;
+    width: 100px;
+    height: px;
+    background-color: #550000;
+    top: 300px;
     opacity: 0;
   }
   to {
+    width: 200px;
+    height: 100px;
+    background-color: #ffffff;
     top: 50%;
     opacity: 1;
   }
