@@ -57,7 +57,7 @@ function addition() {
   task.appendChild(deleteButton);
 
   if (inputTask.value === "") {
-    alert("Please Enter a Task");
+    alert("Por favor adicione uma tarefa");
   } else {
     taskContainer.appendChild(task);
   }
@@ -65,11 +65,11 @@ function addition() {
   inputTask.value = "";
 
   checkButton.addEventListener("click", function () {
-    checkButton.parentElement.style.textDecoration = "line-through";
     checkButton.parentElement.style.backgroundColor = "rgb(2, 219, 147)";
-    checkButton.parentElement.style.color = "#ffffff";
+    checkButton.parentElement.style.color = "white";
     checkButton.style.backgroundColor = "rgb(2, 219, 147)";
     checkButton.style.color = "#ffffff";
+    checkButton.style.display = "none";
     deleteButton.style.backgroundColor = "rgb(2, 219, 147)";
     deleteButton.style.color = "#ffffff";
   });
